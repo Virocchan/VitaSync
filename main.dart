@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:fl_chart/fl_chart.dart'; // For bar charts
 import 'dart:math' as math; // For circular progress painter
-
-// Ensure this import path is correct based on your folder structure
-import 'screens/chat_screen.dart';
+import 'screens/fake_gemini_chat_screen.dart'; // NEW IMPORT for the fake chatbot
 
 void main() {
   runApp(const VitaSyncApp());
@@ -79,8 +77,7 @@ class _VitaSyncDashboardScreenState extends State<VitaSyncDashboardScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    // Use theme colors for consistency where possible
-    final primaryColor = theme.primaryColor; // Or your specific Color(0xFF6A11CB)
+    final primaryColor = theme.primaryColor;
     final secondaryColor = const Color(0xFF2575FC);
     final stepsColor = const Color(0xFF6A11CB);
     final caloriesColor = const Color(0xFF00BFA6);
@@ -141,18 +138,19 @@ class _VitaSyncDashboardScreenState extends State<VitaSyncDashboardScreen> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton.extended(
+      // --- MODIFIED FloatingActionButton ---
+      floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const ChatScreen()),
+            MaterialPageRoute(builder: (context) => const FakeGeminiChatScreen()), // Navigate to the new chat screen
           );
         },
-        label: const Text('VitaBot', style: TextStyle(fontWeight: FontWeight.w600)),
-        icon: const Icon(Icons.chat_bubble_outline_rounded),
-        backgroundColor: primaryColor,
+        backgroundColor: primaryColor, // Use theme color for consistency
         foregroundColor: Colors.white,
         elevation: 4.0,
+        tooltip: 'Chat with VitaBot', // Optional: Good for accessibility
+        child: const Icon(Icons.chat_bubble_outline_rounded),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
