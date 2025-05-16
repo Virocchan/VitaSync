@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:fl_chart/fl_chart.dart'; // For bar charts
 import 'dart:math' as math; // For circular progress painter
-import 'screens/fake_gemini_chat_screen.dart'; // NEW IMPORT for the fake chatbot
+import 'screens/gemini_chat.dart'; // NEW IMPORT for the fake chatbot
 
 void main() {
   runApp(const VitaSyncApp());
@@ -143,7 +143,7 @@ class _VitaSyncDashboardScreenState extends State<VitaSyncDashboardScreen> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const FakeGeminiChatScreen()), // Navigate to the new chat screen
+            MaterialPageRoute(builder: (context) => const GeminiChat()), // Navigate to the new chat screen
           );
         },
         backgroundColor: primaryColor, // Use theme color for consistency
