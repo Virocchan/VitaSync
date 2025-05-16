@@ -1,0 +1,33 @@
+name: flask
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  intl: ^0.18.0 # Check for latest version
+  fl_chart: ^0.63.0 # Check for latest version
+  # flutter_svg: ^2.0.7 # If you have an SVG logo
+  http: ^1.4.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+
+
+
+flutter:
+  uses-material-design: true
+  assets:
